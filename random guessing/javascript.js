@@ -6,9 +6,23 @@ let maxAttempts
 let guess
 
 function easy() {
-    document.getElementById("answer").innerHTML = `game started, you have 3 attempts`;
+    document.getElementById("answer").innerHTML = `game started, you have 10 attempts`;
     attempts = 0;
     maxAttempts = 10;
+    Num = Math.floor(Math.random() *100) +1;
+}
+
+function medium() {
+    document.getElementById("answer").innerHTML = `game started, you have 5 attempts`;
+    attempts = 0;
+    maxAttempts = 5;
+    Num = Math.floor(Math.random() *100) +1;
+}
+
+function hard() {
+    document.getElementById("answer").innerHTML = `game started, you have 3 attempts`;
+    attempts = 0;
+    maxAttempts = 3;
     Num = Math.floor(Math.random() *100) +1;
 }
 function Submit() {
@@ -26,6 +40,6 @@ function Submit() {
         }  
     } 
     if (attempts >= maxAttempts) {
-        text.innerHTML= `Out of attempts, try again`; 
+        text.innerHTML= `Out of attempts, try again, the number was ${Num}`; 
     }
 }
